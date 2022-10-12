@@ -1,20 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { v4 as uuidv4 } from 'uuid';
-import { CreateDoctorDto } from './dto/create-doctor.dto';
-import { UpdateDoctorDto } from './dto/update-doctor.dto';
-import { Doctor } from './entities/doctor.entity';
+import { CreateDoctorDto } from '../dto/create-doctor.dto';
+import { UpdateDoctorDto } from '../dto/update-doctor.dto';
+import { Doctor } from '../entities/doctor.entity';
 
 @Injectable()
 export class DoctorsService {
   doctors: Doctor[] = [];
-  /*
-    {id:"1", "name": "Dr. John Doe", "img": "img/docmale.png", "speciality": "Diabetes"},
-    {id:"2", "name": "Dr. Karen Smith", "img": "img/docfemale.png", "speciality": "Anxiety"},
-    {id:"3", "name": "Dr. David Johnson", "img": "img/docmale.png", "speciality": "Cancer"},
-    {id:"4", "name": "Dr. Lisa Adams", "img": "img/docfemale.png", "speciality": "Asthma"},]
-  };
-*/
-
   constructor() {
     this.doctors.push(
       {
