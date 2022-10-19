@@ -48,12 +48,12 @@ export class DoctorsService {
     return this.doctors;
   }
 
-  findOne(id: string) {
-    return this.doctors.filter((obj) => obj.id === id);
+  findOne(id: string): Doctor {
+    return this.doctors.find((obj) => obj.id === id);
   }
 
-  findBySpeciality(speciality: string) {
-    return this.doctors.filter((obj) => obj.speciality === speciality);
+  findBySpeciality(speciality: string): Doctor {
+    return this.doctors.find((obj) => obj.speciality === speciality);
   }
 
   update(id: number, _updateDoctorDto: UpdateDoctorDto) {
